@@ -41,6 +41,7 @@ Food is the central data object which has relations to almost every other object
 	  "plural_name": "<food_plural_name>",
 	  "supermarket_category": "<category_slug>",
 	  "preferred_unit": "<unit_slug>",
+	  "preferred_packaging_unit: "<unit_slug>",
 	  "properties": [
 	    {
 		  "food_amount": "<food_amount>",
@@ -53,6 +54,10 @@ Food is the central data object which has relations to almost every other object
 	...
 ]
 ```
+
+preferred unit: unit automatically selected in the editor
+preferred packaging unit: unit converted into (if possible) for the shopping list
+
 ### Unit
 Units of measurement. The `base_unit` is optional and can tell tandoor which standardized unit it is (e.g. g, kg, pound, fl.oz.). This allows automatic unit conversion while still allowing the user the freedom to choose how a unit should be displayed (e.g. gram, Gram, g, ...)
 
