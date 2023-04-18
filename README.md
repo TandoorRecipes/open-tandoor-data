@@ -41,10 +41,10 @@ Food is the central data object which has relations to almost every other object
 	  "plural_name": "<food_plural_name>",
 	  "supermarket_category": "<category_slug>",
 	  "preferred_unit": "<unit_slug>",
-	  "preferred_packaging_unit: "<unit_slug>",
+	  "preferred_packaging_unit": "<unit_slug>",
 	  "properties": [
 	    {
-		  "food_amount": "<food_amount>",
+	      "food_amount": "<food_amount>",
 	      "food_unit": "<unit_slug>",
 	      "property_type": "<property_type_slug>",
 	      "property_value": "<value_of_property>",
