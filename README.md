@@ -31,6 +31,9 @@ data
 ## Datatypes
 This repository contains different datatypes which have the following schema. 
 
+All objects in each nesting depth can have the attribute `comment` or `comment_*` which should not 
+be consumed by any parser and allows adding editor notes to objects. 
+
 ### Food
 Food is the central data object which has relations to almost every other object.
 ```json
@@ -39,9 +42,10 @@ Food is the central data object which has relations to almost every other object
 	  "slug": "<unique_food_slug>",
 	  "name": "<food_name>",
 	  "plural_name": "<food_plural_name>",
+	  "description" : "<food_description>",
 	  "supermarket_category": "<category_slug>",
 	  "preferred_unit": "<unit_slug>",
-	  "preferred_packaging_unit: "<unit_slug>",
+	  "preferred_packaging_unit": "<unit_slug>",
 	  "properties": [
 	    {
 		  "food_amount": "<food_amount>",
@@ -68,12 +72,29 @@ Units of measurement. The `base_unit` is optional and can tell tandoor which sta
 	  "name": "<unit_name>",
 	  "plural_name": "<unit_plural_name>",
 	  "base_unit": "<base_unit>",
+	  "type": "volume|weight|other",
+	  "description" : "<unit_description>"
 	},
 	...
 ]
 ```
 
-### Supermarket Category
+### Property
+Food properties. This can be nutrition types, allergens, CO2 footprints or whatever the user wants. The standard database should only include nutritions and maybe allergenes. 
+
+```json
+[
+	{
+	  "slug": "<unique_property_slug>",
+	  "name": "<property_name>",
+	  "unit": "<property_unit>",
+	  "description" : "<property_description>"
+	},
+	...
+]
+```
+
+### Category
 Category of food in a typical supermarket. Allows automatic sorting.
 ```json
 [
@@ -110,9 +131,12 @@ Often Foods or Units have different names or different ways of writing them. Thi
 ```json
 [
 	{
-	  "pattern":"<regex_matching_pattern>",
 	  "target_object": "<object_slug>",
-	  "type": "<unit|food>"
+	  "type": "<unit|food>",
+	  "pattern": [
+		"<regex_matching_pattern>",
+		...
+	  ]
 	},
 	...
 ]
@@ -126,11 +150,11 @@ Tandoor can by default convert between all common weight and all common volume u
 ```json
 [
 	{
-		"food" : "<food_slug>"
-		"base_amount" : "<base_amount>"
-    		"base_unit" : "<unit_slug>"
-    		"converted_amount" : "<converted_amount>"
-    		"converted_unit" : "<unit_slug>"
+		"food" : "<food_slug>",
+		"base_amount" : "<base_amount>",
+		"base_unit" : "<unit_slug>",
+		"converted_amount" : "<converted_amount>",
+		"converted_unit" : "<unit_slug>",
 	},
 	...
 ]

@@ -1,0 +1,25 @@
+{
+    "data": [
+        {
+            "slug": "unit-g",
+            "name": "g",
+            "plural_name": "g",
+            "base_unit": "g",
+            "type": "weight"
+        },
+        {
+            "slug": "unit-kg",
+            "name": "kg",
+            "plural_name": "kg",
+            "base_unit": "kg",
+            "type": "weight"
+        },
+        {
+            "slug": "unit-ml",
+            "name": "ml",
+            "plural_name": "ml",
+            "base_unit": "ml",
+            "type": "volume"
+        }
+    ]
+}

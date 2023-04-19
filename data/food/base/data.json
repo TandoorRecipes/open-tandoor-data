@@ -1,0 +1,67 @@
+{
+    "data": [
+        {
+            "slug": "food-potato",
+            "name": "Potato",
+            "plural_name": "Potatoes",
+            "supermarket_category": "category-vegetables",
+            "preferred_unit": "unit-kg",
+            "preferred_packaging_unit": "unit-kg",
+            "properties": {
+                "food_amount": "100",
+                "food_unit": "unit-g",
+                "type_values": [
+                    {
+                        "property_type": "property-calories",
+                        "property_value": 69
+                    },
+                    {
+                        "property_type": "category-carbohydrates",
+                        "property_value": 14
+                    },
+                    {
+                        "property_type": "category-proteins",
+                        "property_value": 2
+                    },
+                    {
+                        "property_type": "category-fats",
+                        "property_value": 0.02
+                    }
+                ]
+            },
+            "fdc_id": "2346403"
+        },
+        {
+            "slug": "food-wheat-flour",
+            "name": "Wheat flour",
+            "plural_name": "Wheat flour",
+            "supermarket_category": "category-baking",
+            "preferred_unit": "unit-kg",
+            "preferred_packaging_unit": "unit-kg",
+            "properties": {
+                "food_amount": "100",
+                "food_unit": "unit-g",
+                "type_values": [
+                    {
+                        "property_type": "property-calories",
+                        "property_value": 364
+                    },
+                    {
+                        "property_type": "category-carbohydrates",
+                        "property_value": 76.3
+                    },
+                    {
+                        "property_type": "category-proteins",
+                        "property_value": 10.3
+                    },
+                    {
+                        "property_type": "category-fats",
+                        "property_value": 0.98
+                    }
+                ]
+            },
+            "fdc_id": "168936",
+            "comment": "all purpose flour, equivalent to type 550"
+        }
+    ]
+}

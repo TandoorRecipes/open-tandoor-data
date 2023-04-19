@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "slug": "property-calories",
+            "name": "Calories",
+            "unit": "kcal"
+        },
+        {
+            "slug": "category-carbohydrates",
+            "name": "Carbohydrates",
+            "unit": "g"
+        },
+        {
+            "slug": "category-proteins",
+            "name": "Proteins",
+            "unit": "g"
+        },
+        {
+            "slug": "category-fats",
+            "name": "Fats",
+            "unit": "g"
+        }
+    ]
+}
