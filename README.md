@@ -8,6 +8,8 @@ Certain parts of this dataset are universal to all languages/cultures while othe
 
 When consuming data in the example below the consumer would first load the `data.json` included in the base directory. After that it will load the data of a specific language/culture. Anything in the specific file will override the base file. This could also be layered to allow multi stage inheritance. 
 
+Labels and text contained in the `base` version are **always** given in english. Data locale specific folders are given in their respective languages. 
+
 ```
 data
   food
@@ -34,6 +36,8 @@ This repository contains different datatypes which have the following schema.
 All objects in each nesting depth can have the attribute `comment` or `comment_*` which should not 
 be consumed by any parser and allows adding editor notes to objects. 
 
+All fields markt as strings should not be longer than 128 characters.
+
 ### Food
 Food is the central data object which has relations to almost every other object.
 ```json
@@ -46,21 +50,37 @@ Food is the central data object which has relations to almost every other object
 	  "supermarket_category": "<category_slug>",
 	  "preferred_unit": "<unit_slug>",
 	  "preferred_packaging_unit": "<unit_slug>",
-	  "properties": [
-	    {
+	  "properties": {
 		  "food_amount": "<food_amount>",
 	      "food_unit": "<unit_slug>",
-	      "property_type": "<property_type_slug>",
-	      "property_value": "<value_of_property>",
-	    },
-	  ]
+		  "type_values": [
+			{
+				"property_type": "<property_slug>",
+				"property_value": "<property_value>",
+			},
+			...
+		],
+	  },
+	  "fdc_id": "<usda_database_fdc_id>"
 	},
 	...
 ]
 ```
 
-preferred unit: unit automatically selected in the editor  
-preferred packaging unit: unit converted into (if possible) for the shopping list  
+- [string] `name`: common food name. Should be as generic as possible while identifying a food precicely. Should not include brand names. 
+- (optional) [string] `plural_name`: Plural name of a food
+- (optional) [text] `description`: Description of the food for the end user. 
+- (optional) [slug] `supermarket_category`: Slug of a supermarket category
+- (optional) [slug] `preferred_unit`: Slug of a unit, typically used unit for a food in recipes
+- (optional) [slug] `preferred_packaging_unit`: Slug of a unit, typically used as a packaging unit in shopping or stock keeping.
+- (optional) [object] `properties`: properties of a food (nutritions, allergens, ...)
+  - [number] `food_amount`: base amount property values are given for
+  - [slug] `food_unit`: Unit slug of unit measuring the food_amount
+  - [array] `typed_values`: Array of property type/value pairs:
+    - [slug] `property_type`: Slug of property type
+    - [number] `property_value`: Value of the property
+- (optional) [text] `fdc_id`: Food data can be sourced from the [USDA Database](https://fdc.nal.usda.gov/fdc-app.html#/) which also contains the FDC ID
+
 
 ### Unit
 Units of measurement. The `base_unit` is optional and can tell tandoor which standardized unit it is (e.g. g, kg, pound, fl.oz.). This allows automatic unit conversion while still allowing the user the freedom to choose how a unit should be displayed (e.g. gram, Gram, g, ...)
