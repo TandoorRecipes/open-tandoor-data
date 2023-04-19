@@ -1,1 +1,5 @@
-{"Potato": "Potato", "Potatoes": "Potatoes", "Wheat flour": "Weizenmehl"}
+{
+    "Potato": "Kartoffel",
+    "Potatoes": "Kartoffeln",
+    "Wheat flour": "Weizenmehl"
+}
