@@ -1,0 +1,24 @@
+{
+    "food": {
+        "slug": "slug",
+        "name": "string:128",
+        "plural_name": "string:128",
+        "supermarket_category": "reference:category",
+        "preferred_unit": "reference:unit",
+        "preferred_packaging_unit": "reference:unit",
+        "properties": {
+            "food_amount": "number",
+            "food_unit": "reference:unit",
+            "type_values": [
+                {
+                    "property_type": "reference:property",
+                    "property_value": "number"
+                } 
+            ]
+        },
+        "fdc_id": "string:128"
+    },
+    "unit": {},
+    "category": {},
+    "property": {}
+}

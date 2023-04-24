@@ -16,15 +16,15 @@
                         "property_value": 69
                     },
                     {
-                        "property_type": "category-carbohydrates",
+                        "property_type": "property-carbohydrates",
                         "property_value": 14
                     },
                     {
-                        "property_type": "category-proteins",
+                        "property_type": "property-proteins",
                         "property_value": 2
                     },
                     {
-                        "property_type": "category-fats",
+                        "property_type": "property-fats",
                         "property_value": 0.02
                     }
                 ]
@@ -47,15 +47,15 @@
                         "property_value": 364
                     },
                     {
-                        "property_type": "category-carbohydrates",
+                        "property_type": "property-carbohydrates",
                         "property_value": 76.3
                     },
                     {
-                        "property_type": "category-proteins",
+                        "property_type": "property-proteins",
                         "property_value": 10.3
                     },
                     {
-                        "property_type": "category-fats",
+                        "property_type": "property-fats",
                         "property_value": 0.98
                     }
                 ]

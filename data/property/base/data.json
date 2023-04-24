@@ -6,17 +6,17 @@
             "unit": "kcal"
         },
         {
-            "slug": "category-carbohydrates",
+            "slug": "property-carbohydrates",
             "name": "Carbohydrates",
             "unit": "g"
         },
         {
-            "slug": "category-proteins",
+            "slug": "property-proteins",
             "name": "Proteins",
             "unit": "g"
         },
         {
-            "slug": "category-fats",
+            "slug": "property-fats",
             "name": "Fats",
             "unit": "g"
         }
