@@ -26,7 +26,7 @@
         "slug": "slug",
         "name": "localized_string:128",
         "plural_name": "localized_string:128",
-        "base_unit": "options::g:kg:ml:l:ounce:pound:fluid_ounce:pint:quart:gallon:imperial_fluid_ounce:imperial_pint:imperial_quart:imperial_gallon",
+        "base_unit": "options::g:kg:ml:l:tsp:tbsp:ounce:pound:fluid_ounce:pint:quart:gallon:imperial_fluid_ounce:imperial_pint:imperial_quart:imperial_gallon",
         "type": "options:weight:volume:other"
     },
     "category": {
