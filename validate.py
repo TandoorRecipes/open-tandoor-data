@@ -56,7 +56,6 @@ def validate_slugs(l, o, d, schema, base_object):
 
 
 def validate_schema(l, o, d, schema, base_object):
-    print (schema)
     for x in list(schema.keys()):
         try:
             if isinstance(schema[x], str):

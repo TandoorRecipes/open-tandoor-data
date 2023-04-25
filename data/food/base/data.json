@@ -27,7 +27,8 @@
                         "property_type": "property-fats",
                         "property_value": 0.02
                     }
-                ]
+                ],
+                "source": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2346403/nutrients"
             },
             "alias": [],
             "fdc_id": "2346403"
@@ -59,7 +60,8 @@
                         "property_type": "property-fats",
                         "property_value": 0.98
                     }
-                ]
+                ],
+                "source": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/168936/nutrients"
             },
             "fdc_id": "168936",
             "alias": [],
