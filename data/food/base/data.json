@@ -8,7 +8,7 @@
             "preferred_unit": "unit-kg",
             "preferred_packaging_unit": "unit-kg",
             "properties": {
-                "food_amount": "100",
+                "food_amount": 100,
                 "food_unit": "unit-g",
                 "type_values": [
                     {
@@ -29,6 +29,7 @@
                     }
                 ]
             },
+            "alias": [],
             "fdc_id": "2346403"
         },
         {
@@ -39,7 +40,7 @@
             "preferred_unit": "unit-kg",
             "preferred_packaging_unit": "unit-kg",
             "properties": {
-                "food_amount": "100",
+                "food_amount": 100,
                 "food_unit": "unit-g",
                 "type_values": [
                     {
@@ -61,6 +62,7 @@
                 ]
             },
             "fdc_id": "168936",
+            "alias": [],
             "comment": "all purpose flour, equivalent to type 550"
         }
     ]

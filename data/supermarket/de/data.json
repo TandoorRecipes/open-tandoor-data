@@ -1,0 +1,12 @@
+{
+    "data": [
+        {
+            "slug": "edeka-generic",
+            "categories": [
+                "category-vegetables",
+                "category-dairy",
+                "category-baking"
+            ]
+        }
+    ]
+}

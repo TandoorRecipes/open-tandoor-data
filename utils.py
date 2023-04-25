@@ -62,5 +62,5 @@ def get_available_translations():
 
 
 def get_available_datatypes():
-    # TODO load from folder
-    return ["food", "unit", "category", "property"]
+    schema = load_schema()
+    return list(schema.keys())

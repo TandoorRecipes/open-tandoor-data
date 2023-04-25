@@ -1,8 +1,8 @@
 {
     "food": {
         "slug": "slug",
-        "name": "string:128",
-        "plural_name": "string:128",
+        "name": "localized_string:128",
+        "plural_name": "localized_string:128",
         "supermarket_category": "reference:category",
         "preferred_unit": "reference:unit",
         "preferred_packaging_unit": "reference:unit",
@@ -13,12 +13,44 @@
                 {
                     "property_type": "reference:property",
                     "property_value": "number"
-                } 
-            ]
+                }
+            ],
+            "source": "required"
         },
-        "fdc_id": "string:128"
+        "fdc_id": "string:128",
+        "alias": [
+            "regex:128"
+        ]
     },
-    "unit": {},
-    "category": {},
-    "property": {}
+    "unit": {
+        "slug": "slug",
+        "name": "localized_string:128",
+        "plural_name": "localized_string:128",
+        "base_unit": "options::g:kg:ml:l:ounce:pound:fluid_ounce:pint:quart:gallon:imperial_fluid_ounce:imperial_pint:imperial_quart:imperial_gallon",
+        "type": "options:weight:volume:other"
+    },
+    "category": {
+        "slug": "slug",
+        "name": "localized_string:128"
+    },
+    "property": {
+        "slug": "slug",
+        "name": "localized_string:128",
+        "unit": "string:16"
+    },
+    "supermarket": {
+        "slug": "slug",
+        "categories": [
+            "reference:category"
+        ]
+    },
+    "conversion": {
+        "slug": "slug",
+        "food": "reference:food",
+        "base_amount": "number",
+        "base_unit": "reference:unit",
+        "converted_amount": "number",
+        "converted_unit": "reference:unit",
+        "source": "required"
+    }
 }

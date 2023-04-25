@@ -1,6 +1,13 @@
 {
     "data": [
         {
+            "slug": "unit-pcs",
+            "name": "pcs",
+            "plural_name": "pcs",
+            "base_unit": "",
+            "type": "other"
+        },
+        {
             "slug": "unit-g",
             "name": "g",
             "plural_name": "g",

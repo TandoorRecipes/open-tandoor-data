@@ -1,11 +1,5 @@
-# validate json format
-# validate all slugs link to existing entries -> test
-# validate uniqueness of slugs -> test
-# validate typed fileds (numbers, strings and selectable options e.g. base units, types, ...)
-# slug field allowed characters (no whitespace, only lower case, only dash)
-# validate no special characters in localized fields ??
-# validate all files needed for langauge exist ? (or do we not want to enforce this?)
-
+from json import JSONDecodeError
+import re
 import sys
 from utils import (
     get_available_datatypes,
@@ -18,33 +12,122 @@ errors = []
 schema = load_schema()
 data = {}
 
+# TODO add validation for lists that include slugs (supermarket category)
+# TODO validate source field is present on each root object
+# TODO validate slug starts with type- prefix
+
 
 def add_error(language, datatype, object, text):
-    errors.append(f"({language}-{datatype}) {object}: {text}")
+    if object:
+        errors.append(f"({language}-{datatype}) {object}: {text}")
+    else:
+        errors.append(f"({language}-{datatype}): {text}")
 
 
 def validate_slugs(l, o, d, schema, base_object):
     for x in list(schema.keys()):
-        if isinstance(schema[x], str):
-            if schema[x].split(":")[0] == "reference":
-                if not o[x] in data[l][schema[x].split(":")[1]]["keys"]:
-                    add_error(
-                        l,
-                        d,
-                        base_object,
-                        f'could not find reference <{o[x]}> for datatype <{schema[x].split(":")[1]}>',
-                    )
-        elif isinstance(schema[x], list):
-            for i in o[x]:
-                # lists can only contain objects of the same type. validate all list entries against the first type in schema.
-                validate_slugs(l, i, d, schema[x][0], base_object)
-        else:
-            # validate nested object
-            validate_slugs(l, o[x], d, schema[x], base_object)
+        try:
+            if isinstance(schema[x], str):
+                if schema[x].split(":")[0] == "reference":
+                    if not o[x] in data[l][schema[x].split(":")[1]]["keys"]:
+                        add_error(
+                            l,
+                            d,
+                            base_object,
+                            f'could not find reference <{o[x]}> for datatype <{schema[x].split(":")[1]}>',
+                        )
+            elif isinstance(schema[x], list):
+                for i in o[x]:
+                    if isinstance(i, str):
+                        pass  # TODO add validation for strings in lists
+                    else:
+                        # lists can only contain objects of the same type. validate all list entries against the first type in schema.
+                        validate_slugs(l, i, d, schema[x][0], base_object)
+            else:
+                # validate nested object
+                validate_slugs(l, o[x], d, schema[x], base_object)
+        except KeyError:
+            add_error(
+                l,
+                d,
+                base_object,
+                f"object is missing key <{x}>",
+            )
 
 
-def validate_slug_characters(language,datatype,object):
-    pass
+def validate_schema(l, o, d, schema, base_object):
+    print (schema)
+    for x in list(schema.keys()):
+        try:
+            if isinstance(schema[x], str):
+                if (
+                    schema[x].split(":")[0] == "localized_string"
+                    or schema[x].split(":")[0] == "string"
+                ):
+                    if not re.fullmatch(r"([A-z0-9\-\(\)\&\s])+", o[x]):
+                        add_error(
+                            l,
+                            d,
+                            base_object,
+                            f"<{o[x]}> contains invalid characters (only A-z,0-9,-,(,),& and whitespace allowed) - feel like it should be allowed? please open an issue on github",
+                        )
+                    if len(o[x]) > int(schema[x].split(":")[1]):
+                        add_error(
+                            l,
+                            d,
+                            base_object,
+                            f"<{o[x]}> exceeded lenght for field <{x}>",
+                        )
+                if schema[x].split(":")[0] == "number":
+                    if not (isinstance(o[x], int) or isinstance(o[x], float)):
+                        add_error(l, d, base_object, f"{o[x]} is not a number")
+                if schema[x].split(":")[0] == "options":
+                    if not o[x] in schema[x].split(":")[1:]:
+                        add_error(
+                            l,
+                            d,
+                            base_object,
+                            f"invalid choice <{o[x]}> for field <{x}> valid options are: {', '.join(schema[x].split(':')[1:])}",
+                        )
+                if x == "source":
+                    if schema[x] == "required":
+                        if not "source" in o:
+                            add_error(
+                                l,
+                                d,
+                                base_object,
+                                "object is  missing mandatory source attribute",
+                            )
+                        elif o["source"].strip() == "":
+                            add_error(
+                                l,
+                                d,
+                                base_object,
+                                "object mandatory source is empty",
+                            )
+            elif isinstance(schema[x], list):
+                for i in o[x]:
+                    if isinstance(i, str):
+                        pass  # TODO add validation for strings in lists
+                    else:
+                        # lists can only contain objects of the same type. validate all list entries against the first type in schema.
+                        validate_schema(l, i, d, schema[x][0], base_object)
+            else:
+                # validate nested object
+                validate_schema(l, o[x], d, schema[x], base_object)
+        except KeyError:
+            pass  # handled in validate_slugs
+
+
+def validate_slug_characters(language, datatype, object):
+    if not re.fullmatch(r"(([a-z1-9])+(\-)*)+", object["slug"]):
+        add_error(
+            language,
+            datatype,
+            object["slug"],
+            "Slugs can only contain lower case characters and numbers connected with -",
+        )
+
 
 for l in get_available_translations():
     data[l] = {}
@@ -53,18 +136,28 @@ for l in get_available_translations():
             "keys": [],
             "data": [],
         }
-        for o in load_data(d, l):
-            if o["slug"] in data[l][d]["keys"]:
-                add_error(l, d, o["slug"], "Duplicate key")
-            else:
-                data[l][d]["keys"].append(o["slug"])
-            data[l][d]["data"].append(o)  # TODO merge down
+        try:
+            for o in load_data(d, l):
+                if o["slug"] in data[l][d]["keys"]:
+                    add_error(l, d, o["slug"], "Duplicate key")
+                else:
+                    data[l][d]["keys"].append(o["slug"])
+                data[l][d]["data"].append(o)  # TODO merge down
+        except JSONDecodeError as e:
+            add_error(
+                l, d, None, f"JSON format error: {e.msg} on line {e.lineno}:{e.colno}"
+            )
 
 
 for l in get_available_translations():
     for d in get_available_datatypes():
-        for o in load_data(d, l):
-            validate_slugs(l, o, d, schema[d], o["slug"])
+        try:
+            for o in load_data(d, l):
+                validate_slugs(l, o, d, schema[d], o["slug"])
+                validate_schema(l, o, d, schema[d], o["slug"])
+                validate_slug_characters(l, d, o)
+        except JSONDecodeError as e:
+            pass
 
 
 print("========================================")
@@ -75,6 +168,6 @@ if len(errors) > 0:
     print("========================================")
     sys.exit(1)
 else:
-    print('All files validated without errors')
+    print("All files validated without errors")
     print("========================================")
     sys.exit(0)
