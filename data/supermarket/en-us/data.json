@@ -1,7 +1,7 @@
 {
-    "data": [
-        {
-            "slug": "supermarket-costco",
+    "data": {
+        "supermarket-costco" : {
+            "name": "Costco",
             "categories": [
                 "category-produce",
                 "category-bakery",
@@ -12,8 +12,8 @@
                 "category-canned"
             ]
         },
-        {
-            "slug": "supermarket-target",
+        "supermarket-target" : {
+            "name": "Target",
             "categories": [
                 "category-produce",
                 "category-bakery",
@@ -24,8 +24,8 @@
                 "category-canned"
             ]
         },
-        {
-            "slug": "supermarket-walmart",
+        "supermarket-walmart" : {
+            "name": "Walmart",
             "categories": [
                 "category-bakery",
                 "category-produce",
@@ -36,5 +36,5 @@
                 "category-canned"
             ]
         }
-    ]
+    }
 }

@@ -1,7 +1,6 @@
 {
-    "data": [
-        {
-            "slug": "food-potato",
+    "data": {
+        "food-potato": {
             "name": "Potato",
             "plural_name": "Potatoes",
             "supermarket_category": "category-vegetables",
@@ -33,8 +32,7 @@
             "alias": [],
             "fdc_id": "2346403"
         },
-        {
-            "slug": "food-wheat-flour",
+        "food-wheat-flour": {
             "name": "Wheat flour",
             "plural_name": "Wheat flour",
             "supermarket_category": "category-baking",
@@ -67,5 +65,5 @@
             "alias": [],
             "comment": "all purpose flour, equivalent to type 550"
         }
-    ]
+    }
 }

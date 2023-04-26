@@ -27,7 +27,7 @@ def load_data(datatype, language="base"):
         return data["data"]
     except FileNotFoundError:
         log("debug", f"no data found for {datatype} in version {language}")
-        return []
+        return {}
 
 
 

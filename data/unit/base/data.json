@@ -1,74 +1,64 @@
 {
-    "data": [
-        {
-            "slug": "unit-pcs",
+    "data": {
+        "unit-pcs" : {
             "name": "pcs",
             "plural_name": "pcs",
             "base_unit": "",
             "type": "other"
         },
-        {
-            "slug": "unit-g",
+        "unit-g" : {
             "name": "g",
             "plural_name": "g",
             "base_unit": "g",
             "type": "weight"
         },
-        {
-            "slug": "unit-kg",
+        "unit-kg" : {
             "name": "kg",
             "plural_name": "kg",
             "base_unit": "kg",
             "type": "weight"
         },
-        {
-            "slug": "unit-ml",
+        "unit-ml" : {
             "name": "ml",
             "plural_name": "ml",
             "base_unit": "ml",
             "type": "volume"
         },
-        {
-            "slug": "unit-oz",
+        "unit-oz" : {
             "name": "oz",
             "plural_name": "oz",
             "base_unit": "ounce",
             "type": "weight"
         },
-        {
-            "slug": "unit-lbs",
+        "unit-lbs" : {
             "name": "lb",
             "plural_name": "lbs",
             "base_unit": "pound",
             "type": "weight"
         },
-        {
-            "slug": "unit-tsp",
+        "unit-tsp" : {
             "name": "tsp",
             "plural_name": "tsp",
             "base_unit": "tsp",
             "type": "volume"
         },
-        {
-            "slug": "unit-tbsp",
+        "unit-tbsp" : {
             "name": "tbsp",
             "plural_name": "tbsp",
             "base_unit": "tbsp",
             "type": "volume"
         },
-        {
-            "slug": "unit-fl-oz",
+        "unit-fl-oz" : {
             "name": "fl oz",
             "plural_name": "fl oz",
             "base_unit": "fluid_ounce",
             "type": "volume"
         },
-        {
-            "slug": "unit-c",
+        "unit-c": {
             "name": "c",
             "plural_name": "c",
             "base_unit": "cup",
             "type": "volume"
         }
-    ]
+    }
 }

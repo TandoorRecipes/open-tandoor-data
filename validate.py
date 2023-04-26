@@ -133,12 +133,12 @@ def validate_schema(l, o, d, schema, base_object):
             pass  # handled in validate_slugs
 
 
-def validate_slug_characters(language, datatype, object):
-    if not re.fullmatch(r"(([a-z1-9])+(\-)*)+", object["slug"]):
+def validate_slug_characters(language, datatype, slug):
+    if not re.fullmatch(r"(([a-z1-9])+(\-)*)+", slug):
         add_error(
             language,
             datatype,
-            object["slug"],
+            slug,
             "Slugs can only contain lower case characters and numbers connected with -",
         )
 
@@ -148,15 +148,17 @@ for l in ['base'] + get_available_versions():
     for d in get_available_datatypes():
         data[l][d] = {
             "keys": [],
-            "data": [],
+            "data": {},
         }
         try:
-            for o in load_data(d, l):
-                if o["slug"] in data[l][d]["keys"]:
-                    add_error(l, d, o["slug"], "Duplicate key")
+            version_data = load_data(d, l)
+            print(d,l)
+            for k in list(version_data.keys()):
+                if k in data[l][d]['keys']:
+                    add_error(l, d, k, "Duplicate key, object ignored")
                 else:
-                    data[l][d]["keys"].append(o["slug"])
-                data[l][d]["data"].append(o)  # TODO merge down
+                    data[l][d]["keys"].append(k)
+                    data[l][d]["data"][k] = version_data[k]
         except JSONDecodeError as e:
             add_error(
                 l, d, None, f"JSON format error: {e.msg} on line {e.lineno}:{e.colno}"
@@ -166,10 +168,15 @@ for l in ['base'] + get_available_versions():
 for l in ['base'] + get_available_versions():
     for d in get_available_datatypes():
         try:
-            for o in load_data(d, l):
-                validate_slugs(l, o, d, schema[d], o["slug"])
-                validate_schema(l, o, d, schema[d], o["slug"])
-                validate_slug_characters(l, d, o)
+            version_data = load_data(d, l)
+            if l != 'base':
+                # version_data = merge(data['base'][d], version_data)
+                print(version_data)
+            for k in list(version_data.keys()):
+                o = version_data[k]
+                validate_slugs(l, o, d, schema[d], k)
+                validate_schema(l, o, d, schema[d], k)
+                validate_slug_characters(l, d, k)
         except JSONDecodeError as e:
             pass
 

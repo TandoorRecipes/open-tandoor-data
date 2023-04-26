@@ -1,6 +1,5 @@
 {
     "food": {
-        "slug": "slug",
         "name": "localized_string:128",
         "plural_name": "localized_string:128",
         "supermarket_category": "reference:category",
@@ -23,29 +22,24 @@
         ]
     },
     "unit": {
-        "slug": "slug",
         "name": "localized_string:128",
         "plural_name": "localized_string:128",
         "base_unit": "options::g:kg:ml:l:ounce:pound:fluid_ounce:tsp:tbsp:cup:pint:quart:gallon:imperial_fluid_ounce:imperial_pint:imperial_quart:imperial_gallon",
         "type": "options:weight:volume:other"
     },
     "category": {
-        "slug": "slug",
         "name": "localized_string:128"
     },
     "property": {
-        "slug": "slug",
         "name": "localized_string:128",
         "unit": "string:16"
     },
     "supermarket": {
-        "slug": "slug",
         "categories": [
             "reference:category"
         ]
     },
     "conversion": {
-        "slug": "slug",
         "food": "reference:food",
         "base_amount": "number",
         "base_unit": "reference:unit",
