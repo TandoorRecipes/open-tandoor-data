@@ -1,9 +1,11 @@
+from heapq import merge
 from json import JSONDecodeError
 import re
 import sys
+import traceback
 from utils import (
     get_available_datatypes,
-    get_available_translations,
+    get_available_versions,
     load_data,
     load_schema,
 )
@@ -11,10 +13,6 @@ from utils import (
 errors = []
 schema = load_schema()
 data = {}
-
-# TODO add validation for lists that include slugs (supermarket category)
-# TODO validate source field is present on each root object
-# TODO validate slug starts with type- prefix
 
 
 def add_error(language, datatype, object, text):
@@ -47,6 +45,8 @@ def validate_slugs(l, o, d, schema, base_object):
                 # validate nested object
                 validate_slugs(l, o[x], d, schema[x], base_object)
         except KeyError:
+            traceback.print_exc()
+            print(o)
             add_error(
                 l,
                 d,
@@ -104,10 +104,25 @@ def validate_schema(l, o, d, schema, base_object):
                                 base_object,
                                 "object mandatory source is empty",
                             )
+                if schema[x] == "slug":
+                    if not o[x].startswith(f"{d}-"):
+                        add_error(
+                            l,
+                            d,
+                            base_object,
+                            f"slug field needs to start with <{d}->",
+                        )
             elif isinstance(schema[x], list):
                 for i in o[x]:
-                    if isinstance(i, str):
-                        pass  # TODO add validation for strings in lists
+                    if isinstance(schema[x][0], str):
+                        if schema[x][0].split(":")[0] == "reference":
+                            if not i in data[l][schema[x][0].split(":")[1]]["keys"]:
+                                add_error(
+                                    l,
+                                    d,
+                                    base_object,
+                                    f'could not find reference <{i}> in list for datatype <{schema[x][0].split(":")[1]}>',
+                                )
                     else:
                         # lists can only contain objects of the same type. validate all list entries against the first type in schema.
                         validate_schema(l, i, d, schema[x][0], base_object)
@@ -128,7 +143,7 @@ def validate_slug_characters(language, datatype, object):
         )
 
 
-for l in get_available_translations():
+for l in ['base'] + get_available_versions():
     data[l] = {}
     for d in get_available_datatypes():
         data[l][d] = {
@@ -148,7 +163,7 @@ for l in get_available_translations():
             )
 
 
-for l in get_available_translations():
+for l in ['base'] + get_available_versions():
     for d in get_available_datatypes():
         try:
             for o in load_data(d, l):

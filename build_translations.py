@@ -3,7 +3,7 @@ import traceback
 import json
 
 from utils import (
-    get_available_translations,
+    get_available_versions,
     load_data,
     load_translations,
     save_translations,
@@ -11,7 +11,7 @@ from utils import (
 
 
 try:
-    for l in get_available_translations():
+    for l in get_available_versions():
         objects = load_data("food")
         translations = load_translations(l)
         for o in objects:

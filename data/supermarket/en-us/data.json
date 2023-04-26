@@ -1,7 +1,7 @@
 {
     "data": [
         {
-            "slug": "costco",
+            "slug": "supermarket-costco",
             "categories": [
                 "category-produce",
                 "category-bakery",
@@ -13,7 +13,7 @@
             ]
         },
         {
-            "slug": "target",
+            "slug": "supermarket-target",
             "categories": [
                 "category-produce",
                 "category-bakery",
@@ -25,7 +25,7 @@
             ]
         },
         {
-            "slug": "walmart",
+            "slug": "supermarket-walmart",
             "categories": [
                 "category-bakery",
                 "category-produce",
