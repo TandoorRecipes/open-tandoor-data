@@ -1,0 +1,40 @@
+{
+    "data": [
+        {
+            "slug": "costco",
+            "categories": [
+                "category-produce",
+                "category-bakery",
+                "category-deli",
+                "category-dairy",
+                "category-frozen",
+                "category-baking",
+                "category-canned"
+            ]
+        },
+        {
+            "slug": "target",
+            "categories": [
+                "category-produce",
+                "category-bakery",
+                "category-deli",
+                "category-dairy",
+                "category-frozen",
+                "category-baking",
+                "category-canned"
+            ]
+        },
+        {
+            "slug": "walmart",
+            "categories": [
+                "category-bakery",
+                "category-produce",
+                "category-deli",
+                "category-dairy",
+                "category-frozen",
+                "category-baking",
+                "category-canned"
+            ]
+        }
+    ]
+}
