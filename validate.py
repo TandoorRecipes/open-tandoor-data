@@ -1,4 +1,6 @@
-from heapq import merge
+import copy
+from deepmerge import always_merger
+
 from json import JSONDecodeError
 import re
 import sys
@@ -143,7 +145,7 @@ def validate_slug_characters(language, datatype, slug):
         )
 
 
-for l in ['base'] + get_available_versions():
+for l in ["base"] + get_available_versions():
     data[l] = {}
     for d in get_available_datatypes():
         data[l][d] = {
@@ -151,10 +153,9 @@ for l in ['base'] + get_available_versions():
             "data": {},
         }
         try:
-            version_data = load_data(d, l)
-            print(d,l)
+            version_data = always_merger.merge(load_data(d, l), data["base"][d]["data"])
             for k in list(version_data.keys()):
-                if k in data[l][d]['keys']:
+                if k in data[l][d]["keys"]:
                     add_error(l, d, k, "Duplicate key, object ignored")
                 else:
                     data[l][d]["keys"].append(k)
@@ -165,13 +166,12 @@ for l in ['base'] + get_available_versions():
             )
 
 
-for l in ['base'] + get_available_versions():
+for l in ["base"] + get_available_versions():
     for d in get_available_datatypes():
         try:
             version_data = load_data(d, l)
-            if l != 'base':
-                # version_data = merge(data['base'][d], version_data)
-                print(version_data)
+            if l != "base":
+                version_data = always_merger.merge(load_data(d, l), data["base"][d]["data"])
             for k in list(version_data.keys()):
                 o = version_data[k]
                 validate_slugs(l, o, d, schema[d], k)
