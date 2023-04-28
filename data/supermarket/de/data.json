@@ -1,12 +1,12 @@
 {
-    "data": [
-        {
-            "slug": "edeka-generic",
+    "data": {
+        "supermarket-edeka-generic": {
+            "name": "EDEKA",
             "categories": [
                 "category-vegetables",
                 "category-dairy",
                 "category-baking"
             ]
         }
-    ]
+    }
 }

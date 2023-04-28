@@ -1,12 +1,13 @@
 {
-    "data": [
-        {
-            "slug": "food-potato",
+    "data": {
+        "food-potato": {
             "name": "Potato",
             "plural_name": "Potatoes",
             "supermarket_category": "category-vegetables",
-            "preferred_unit": "unit-kg",
-            "preferred_packaging_unit": "unit-kg",
+            "preferred_unit_metric": "unit-kg",
+            "preferred_packaging_unit_metric": "unit-kg",
+            "preferred_unit_imperial": "unit-pcs",
+            "preferred_packaging_unit_imperial": "unit-lbs",
             "properties": {
                 "food_amount": 100,
                 "food_unit": "unit-g",
@@ -33,13 +34,14 @@
             "alias": [],
             "fdc_id": "2346403"
         },
-        {
-            "slug": "food-wheat-flour",
+        "food-wheat-flour": {
             "name": "Wheat flour",
             "plural_name": "Wheat flour",
             "supermarket_category": "category-baking",
-            "preferred_unit": "unit-kg",
-            "preferred_packaging_unit": "unit-kg",
+            "preferred_unit_metric": "unit-kg",
+            "preferred_packaging_unit_metric": "unit-kg",
+            "preferred_unit_imperial": "unit-c",
+            "preferred_packaging_unit_imperial": "unit-lbs",
             "properties": {
                 "food_amount": 100,
                 "food_unit": "unit-g",
@@ -67,5 +69,5 @@
             "alias": [],
             "comment": "all purpose flour, equivalent to type 550"
         }
-    ]
+    }
 }

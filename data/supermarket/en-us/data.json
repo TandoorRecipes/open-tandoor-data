@@ -1,0 +1,40 @@
+{
+    "data": {
+        "supermarket-costco" : {
+            "name": "Costco",
+            "categories": [
+                "category-produce",
+                "category-bakery",
+                "category-deli",
+                "category-dairy",
+                "category-frozen",
+                "category-baking",
+                "category-canned"
+            ]
+        },
+        "supermarket-target" : {
+            "name": "Target",
+            "categories": [
+                "category-produce",
+                "category-bakery",
+                "category-deli",
+                "category-dairy",
+                "category-frozen",
+                "category-baking",
+                "category-canned"
+            ]
+        },
+        "supermarket-walmart" : {
+            "name": "Walmart",
+            "categories": [
+                "category-bakery",
+                "category-produce",
+                "category-deli",
+                "category-dairy",
+                "category-frozen",
+                "category-baking",
+                "category-canned"
+            ]
+        }
+    }
+}

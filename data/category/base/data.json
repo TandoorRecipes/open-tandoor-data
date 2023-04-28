@@ -1,16 +1,13 @@
 {
-    "data": [
-        {
-            "slug": "category-vegetables",
+    "data": {
+        "category-vegetables" : {
             "name": "Vegetables"
         },
-        {
-            "slug": "category-dairy",
+        "category-dairy": {
             "name": "Dairy"
         },
-        {
-            "slug": "category-baking",
+        "category-baking" : {
             "name": "Baking"
         }
-    ]
+    }
 }
