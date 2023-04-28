@@ -8,6 +8,21 @@
         },
         "category-baking" : {
             "name": "Baking"
+        },
+        "category-produce" : {
+            "name": "Produce"
+        },
+        "category-bakery" : {
+            "name": "Bakery"
+        },
+        "category-deli" : {
+            "name": "Deli"
+        },
+        "category-frozen" : {
+            "name": "Frozen"
+        },
+        "category-canned" : {
+            "name": "Canned"
         }
     }
 }
