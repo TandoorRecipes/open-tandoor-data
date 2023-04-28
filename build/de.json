@@ -1,0 +1,68 @@
+{
+	"food": {
+		"food-potato": {
+			"name": "Kartoffel",
+			"plural_name": "Kartoffeln",
+			"supermarket_category": "category-vegetables",
+			"preferred_unit_metric": "unit-kg",
+			"preferred_packaging_unit_metric": "unit-kg",
+			"preferred_unit_imperial": "unit-pcs",
+			"preferred_packaging_unit_imperial": "unit-lbs",
+			"properties": {
+				"food_amount": 100,
+				"food_unit": "unit-g",
+				"type_values": {
+					"property_type": "property-fats",
+					"property_value": 0.02
+				},
+				"source": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/2346403/nutrients"
+			},
+			"alias": [],
+			"fdc_id": "2346403"
+		},
+		"food-wheat-flour": {
+			"name": "Weizenmehl",
+			"plural_name": "Weizenmehl",
+			"supermarket_category": "category-baking",
+			"preferred_unit_metric": "unit-kg",
+			"preferred_packaging_unit_metric": "unit-kg",
+			"preferred_unit_imperial": "unit-c",
+			"preferred_packaging_unit_imperial": "unit-lbs",
+			"properties": {
+				"food_amount": 100,
+				"food_unit": "unit-g",
+				"type_values": {
+					"property_type": "property-fats",
+					"property_value": 0.98
+				},
+				"source": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/168936/nutrients"
+			},
+			"fdc_id": "168936",
+			"alias": [],
+			"comment": "all purpose flour, equivalent to type 550"
+		}
+	},
+	"unit": {},
+	"category": {},
+	"property": {},
+	"supermarket": {
+		"supermarket-edeka-generic": {
+			"name": "EDEKA",
+			"categories": [
+				"category-vegetables",
+				"category-dairy",
+				"category-baking"
+			]
+		}
+	},
+	"conversion": {
+		"conversion-potato-pcs-to-g": {
+			"food": "food-potato",
+			"base_amount": 1,
+			"base_unit": "unit-pcs",
+			"converted_amount": 120,
+			"converted_unit": "unit-g",
+			"source": "https://kitchenlaughter.com/how-many-potatoes-in-a-pound/#:~:text=An%20average%20potato%20weighs%20between,red%20ones%20are%20usually%20smaller."
+		}
+	}
+}
