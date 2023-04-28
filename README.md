@@ -40,13 +40,11 @@ data
       data.json
     de-de
       data.json
-	en
-	  data.json
+    en
+	    data.json
     ...
   unit
     ...
-
-
 ```
 
 ## Data types
