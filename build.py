@@ -57,4 +57,4 @@ for l in get_available_versions():
 
     save_build_version(l, language_data[l])
 
-save_build_version('meta.json', language_data['metadata'])
+save_build_version('meta', language_data['metadata'])
