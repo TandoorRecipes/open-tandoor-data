@@ -25,7 +25,7 @@ def recursive_translate_object(l, d, o, schema, lt):
                         obj_mt = obj_mt or mt
             else:
                 # validate nested object
-                o[x], mt = recursive_translate_object(l,  d, o[x], schema[x], lt)
+                o[x], mt = recursive_translate_object(l, d, o[x], schema[x], lt)
                 obj_mt = obj_mt or mt
         except KeyError:
             print('key error')
@@ -33,8 +33,12 @@ def recursive_translate_object(l, d, o, schema, lt):
     return o, obj_mt
 
 
+# TODO add more metadata to build files for display in applications
 language_data = {
-    'metadata': {} # TODO add metadata to build files for display in applications
+    'metadata': {
+        'versions': get_available_versions(),
+        'datatypes': get_available_datatypes(),
+    }
 }
 
 for l in get_available_versions():
@@ -52,3 +56,5 @@ for l in get_available_versions():
         language_data[l][d] = always_merger.merge(load_data(d, l), localized_base_data)
 
     save_build_version(l, language_data[l])
+
+save_build_version('meta.json', language_data['metadata'])
