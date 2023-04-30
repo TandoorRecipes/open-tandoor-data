@@ -3,7 +3,7 @@
         "food-potato": {
             "name": "Potato",
             "plural_name": "Potatoes",
-            "supermarket_category": "category-vegetables",
+            "supermarket_category": "category-produce",
             "preferred_unit_metric": "unit-kg",
             "preferred_packaging_unit_metric": "unit-kg",
             "preferred_unit_imperial": "unit-pcs",
