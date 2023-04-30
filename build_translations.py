@@ -10,7 +10,7 @@ from utils import (
 )
 
 
-def find_localized_strings(l, d, o, schema):
+def find_localized_strings(o, schema):
     localized_strings = []
     for x in list(schema.keys()):
         try:
@@ -20,13 +20,13 @@ def find_localized_strings(l, d, o, schema):
             elif isinstance(schema[x], list):
                 for i in o[x]:
                     if isinstance(i, str):
-                        pass  # TODO add validation for strings in lists
+                        pass  # TODO check for localized strings in lists
                     else:
                         # lists can only contain objects of the same type. validate all list entries against the first type in schema.
-                        localized_strings += find_localized_strings(l, d, i, schema[x][0])
+                        localized_strings += find_localized_strings(i, schema[x][0])
             else:
                 # validate nested object
-                localized_strings += find_localized_strings(l, d, o[x], schema[x])
+                localized_strings += find_localized_strings(o[x], schema[x])
         except KeyError:
             print('key error')
 
@@ -35,18 +35,17 @@ def find_localized_strings(l, d, o, schema):
 
 global_schema = load_schema()
 try:
-    for l in get_available_versions():
-        translations = load_translations(l)
-        for d in get_available_datatypes():
-            version_data = load_data(d)
+    translations = load_translations('en')
+    for d in get_available_datatypes():
+        base_data = load_data(d, 'base')
 
-            for k in list(version_data.keys()):
-                translation_strings = find_localized_strings(l, d, version_data[k], global_schema[d])
-                for t in translation_strings:
-                    if not t in translations:
-                        translations[t] = t
+        for k in list(base_data.keys()):
+            translation_strings = find_localized_strings(base_data[k], global_schema[d])
+            for t in translation_strings:
+                if t not in translations:
+                    translations[t] = t
 
-        save_translations(l, translations)
+    save_translations('en', translations)
 
 
 except Exception as e:

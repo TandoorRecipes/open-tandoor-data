@@ -6,6 +6,7 @@ global_schema = load_schema()
 
 
 def recursive_translate_object(l, d, o, schema, lt):
+    obj_mt = False
     for x in list(schema.keys()):
         try:
             if isinstance(schema[x], str):
@@ -13,26 +14,27 @@ def recursive_translate_object(l, d, o, schema, lt):
                     if o[x] in lt:
                         o[x] = lt[o[x]]
                     else:
-                        o['missing_translation'] = True
+                        obj_mt = True
             elif isinstance(schema[x], list):
-                print(schema[x], o)
                 for i in o[x]:
                     if isinstance(i, str):
-                        pass  # TODO add validation for strings in lists
+                        pass  # TODO add translation for strings in lists
                     else:
                         # lists can only contain objects of the same type. validate all list entries against the first type in schema.
-                        o[x] = recursive_translate_object(l, d, i, schema[x][0], lt)
+                        o[x], mt = recursive_translate_object(l, d, i, schema[x][0], lt)
+                        obj_mt = obj_mt or mt
             else:
                 # validate nested object
-                o[x] = recursive_translate_object(l,  d, o[x], schema[x], lt)
+                o[x], mt = recursive_translate_object(l,  d, o[x], schema[x], lt)
+                obj_mt = obj_mt or mt
         except KeyError:
             print('key error')
 
-    return o
+    return o, obj_mt
 
 
 language_data = {
-    'metadata': {}
+    'metadata': {} # TODO add metadata to build files for display in applications
 }
 
 for l in get_available_versions():
@@ -40,14 +42,13 @@ for l in get_available_versions():
     language_translations = load_translations(l)
     for d in get_available_datatypes():
         base_data = load_data(d, 'base')
-        language_data[l][d] = {}
-        version_data = always_merger.merge(load_data(d, l), base_data)
-        for k in list(version_data.keys()):
-            translated_object =  recursive_translate_object(l, d, version_data[k], global_schema[d], language_translations)
-            # TODO always use specifc ones as they dont need translation
-            if not 'missing_translation' in translated_object: # TODO recursive check or base object set
-                language_data[l][d][k] = translated_object
+        localized_base_data = {}
+
+        for k in list(base_data.keys()):
+            translated_object, missing_translation = recursive_translate_object(l, d, base_data[k], global_schema[d], language_translations)
+            if not missing_translation:
+                localized_base_data[k] = translated_object
+
+        language_data[l][d] = always_merger.merge(load_data(d, l), localized_base_data)
 
     save_build_version(l, language_data[l])
-
-print(language_data)
