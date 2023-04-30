@@ -3,7 +3,28 @@
 When setting up a new tandoor instance it can be annoying to add all foods, units, supermarkets and categories on your own.
 This repository contains community contributed "sensible default" data for these various data objects that can eventually be imported into tandoor. Everything you need to get your recipe collection started.
 
-This is just a starting point. You can can still customize and add to these defaults in your own spaces or self-hosted applications.
+This is just a starting point. You can still customize and add to these defaults in your own spaces or self-hosted applications.
+
+## Contributing
+
+This project cannot exist without the community maintaining it! Help is much appreciated. 
+
+1. Read this readme to understand the core concepts (or at least the TLDR)
+2. Fork this repository
+3. Choose a datatype (and langauge) you want to edit (e.g. `food/base/data.json`)
+4. Add, change or remove entries based on what you feel is required
+5. Submit a PR. If applicable, describe which decisions might need to be reviewed in particular.
+
+
+## TLDR
+
+- each folder underneath `data` represents a **datatype**
+- each datatype has multiple **versions**
+  - `base` contains objects used everywhere around the world, everything is in english
+  - language specific versions contain objects used only in that region, all texts are given in the local language
+- specific versions override and add to data in base versions (e.g. base units might only contain metric units, en contains imperial as well)
+- use existing data as reference how to add your own
+- its most important to add to the `foods` datatype for now
 
 ## Scope
 
@@ -28,6 +49,8 @@ The order is
 3. language and country code (e.g. `de-de`, `de-ch`)
 
 When consuming data the consumer would first load the `data.json` included in the base directory. After that it will load the data of a specific language and possibly country afterwards. Anything found in a more specific version will override the more basic version.
+
+> WIP: not yet fully implemented, currently base only inherits one specific version
 
 Labels and text contained in the `base` version are **always** given in english. Data in locale specific folders are given in their respective languages.
 
@@ -69,6 +92,9 @@ These are the categories used by the shopping list.
 
 ### Property
 
+Properties that can be tracked for each food. This allows the calculation of total property amounts per recipe. 
+Typical properties are nutritional values. This repository should only include the most commonly used properties. 
+
 ### Store (Supermarket)
 
 Stores can contain one or more categories, letting users sort and filter their shopping lists.
@@ -89,14 +115,6 @@ Most times only one `source` attribute is enforced.
 If multiple sources should be given you can use `source_1`,`source_2`, ...
 
 Sources should be urls if possible or otherwise plausible descriptions of how data was obtained.
-
-## Contributing
-
-Feel free to contribute to this repository.
-
-1. Fork it
-2. Edit whatever file you want
-3. Submit a PR. If applicable, describe which decisions might need to be reviewed in particular.
 
 ## License
 

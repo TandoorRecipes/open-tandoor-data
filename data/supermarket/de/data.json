@@ -3,7 +3,7 @@
         "supermarket-edeka-generic": {
             "name": "EDEKA",
             "categories": [
-                "category-vegetables",
+                "category-produce",
                 "category-dairy",
                 "category-baking"
             ]
