@@ -9,6 +9,8 @@ This is just a starting point. You can still customize and add to these defaults
 
 This project cannot exist without the community maintaining it! Help is much appreciated. 
 
+To help translate visit https://translate.tandoor.dev/projects/tandoor-open-data/data/
+
 1. Read this readme to understand the core concepts (or at least the TLDR)
 2. Fork this repository
 3. Choose a datatype (and langauge) you want to edit (e.g. `food/base/data.json`)
