@@ -1,1 +1,1 @@
-{"versions": ["de", "en", "en-us"], "datatypes": ["food", "unit", "category", "property", "supermarket", "conversion"]}
+{"versions": ["de", "en", "en-us"], "datatypes": ["food", "unit", "category", "property", "supermarket", "conversion"], "de": {"food": 2, "unit": 10, "category": 7, "property": 4, "supermarket": 1, "conversion": 1}, "en": {"food": 2, "unit": 10, "category": 7, "property": 4, "supermarket": 0, "conversion": 1}, "en-us": {"food": 0, "unit": 0, "category": 0, "property": 0, "supermarket": 3, "conversion": 1}}

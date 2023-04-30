@@ -45,6 +45,7 @@ for l in get_available_versions():
     language_data[l] = {
         'metadata': {}
     }
+    language_data['metadata'][l] = {}
     language_translations = load_translations(l)
     for d in get_available_datatypes():
         base_data = load_data(d, 'base')
@@ -56,7 +57,8 @@ for l in get_available_versions():
                 localized_base_data[k] = translated_object
 
         language_data[l][d] = always_merger.merge(load_data(d, l), localized_base_data)
-        language_data[l]['metadata'][d] = len(list(language_data[l][d].keys()))
+
+        language_data['metadata'][l][d] = len(list(language_data[l][d].keys()))
 
     save_build_version(l, language_data[l])
 
