@@ -68,6 +68,41 @@
             "fdc_id": "168936",
             "alias": [],
             "comment": "all purpose flour, equivalent to type 550"
+        },
+        "food-sweet-whole-kernel-canned-corn": {
+            "name": "Sweet whole kernel canned corn",
+            "plural_name": "Sweet whole kernel canned corn",
+            "supermarket_category": "category-canned",
+            "preferred_unit_metric": "unit-g",
+            "preferred_packaging_unit_metric": "unit-g",
+            "preferred_unit_imperial": "unit-pcs",
+            "preferred_packaging_unit_imperial": "unit-fl-oz",
+            "properties": {
+                "food_amount": 100,
+                "food_unit": "unit-g",
+                "type_values": [
+                    {
+                        "property_type": "property-calories",
+                        "property_value": 67
+                    },
+                    {
+                        "property_type": "property-carbohydrates",
+                        "property_value": 14.3
+                    },
+                    {
+                        "property_type": "property-proteins",
+                        "property_value": 2.29
+                    },
+                    {
+                        "property_type": "property-fats",
+                        "property_value": 1.22
+                    }
+                ],
+                "source": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/169214/nutrients"
+            },
+            "fdc_id": "169214",
+            "alias": [],
+            "comment": ""
         }
     }
 }
