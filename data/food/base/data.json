@@ -73,8 +73,8 @@
             "name": "Olive Oil",
             "plural_name": "Olive Oil",
             "supermarket_category": "category-baking",
-            "preferred_unit_metric": "unit-g",
-            "preferred_packaging_unit_metric": "unit-g",
+            "preferred_unit_metric": "unit-ml",
+            "preferred_packaging_unit_metric": "unit-ml",
             "preferred_unit_imperial": "unit-tbsp",
             "preferred_packaging_unit_imperial": "unit-fl-oz",
             "properties": {
