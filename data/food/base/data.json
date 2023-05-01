@@ -68,6 +68,41 @@
             "fdc_id": "168936",
             "alias": [],
             "comment": "all purpose flour, equivalent to type 550"
+        },
+        "food-sugar": {
+            "name": "Sugar",
+            "plural_name": "Sugar",
+            "supermarket_category": "category-baking",
+            "preferred_unit_metric": "unit-g",
+            "preferred_packaging_unit_metric": "unit-g",
+            "preferred_unit_imperial": "unit-c",
+            "preferred_packaging_unit_imperial": "unit-lbs",
+            "properties": {
+                "food_amount": 100,
+                "food_unit": "unit-g",
+                "type_values": [
+                    {
+                        "property_type": "property-calories",
+                        "property_value": 401
+                    },
+                    {
+                        "property_type": "property-carbohydrates",
+                        "property_value": 99.6
+                    },
+                    {
+                        "property_type": "property-proteins",
+                        "property_value": 0
+                    },
+                    {
+                        "property_type": "property-fats",
+                        "property_value": 0.32
+                    }
+                ],
+                "source": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/746784/nutrients"
+            },
+            "fdc_id": "746784",
+            "alias": [],
+            "comment": ""
         }
     }
 }
