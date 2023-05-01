@@ -17,6 +17,14 @@ To help translate visit https://translate.tandoor.dev/projects/tandoor-open-data
 4. Add, change or remove entries based on what you feel is required
 5. Submit a PR. If applicable, describe which decisions might need to be reviewed in particular.
 
+### FDA Script
+
+You can use `fda.py` to make creating foods much easier. 
+
+1. Copy `config.ini.template` to `config.ini` and add your API key (you can use the demo key for first tests)
+2. Search your food on https://fdc.nal.usda.gov/fdc-app.html#/ and copy the FDC ID
+3. Run `python fda.py` and fill in the missing data
+4. Results are automatically saved to `data/food/base/data.json`
 
 ## TLDR
 
