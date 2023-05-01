@@ -73,8 +73,8 @@
             "name": "Egg",
             "plural_name": "Eggs",
             "supermarket_category": "category-baking",
-            "preferred_unit_metric": "unit-g",
-            "preferred_packaging_unit_metric": "unit-g",
+            "preferred_unit_metric": "unit-pcs",
+            "preferred_packaging_unit_metric": "unit-pcs",
             "preferred_unit_imperial": "unit-pcs",
             "preferred_packaging_unit_imperial": "unit-pcs",
             "properties": {
