@@ -68,6 +68,42 @@
             "fdc_id": "168936",
             "alias": [],
             "comment": "all purpose flour, equivalent to type 550"
+        },
+        "food-banana": {
+            "slug": "food-banana",
+            "name": "Banana",
+            "plural_name": "Bananas",
+            "supermarket_category": "category-produce",
+            "preferred_unit_metric": "unit-g",
+            "preferred_packaging_unit_metric": "unit-kg",
+            "preferred_unit_imperial": "unit-g",
+            "preferred_packaging_unit_imperial": "unit-g",
+            "properties": {
+                "food_amount": 100,
+                "food_unit": "unit-g",
+                "type_values": [
+                    {
+                        "property_type": "property-calories",
+                        "property_value": 89.0
+                    },
+                    {
+                        "property_type": "property-proteins",
+                        "property_value": 1.09
+                    },
+                    {
+                        "property_type": "property-fats",
+                        "property_value": 0.33
+                    },
+                    {
+                        "property_type": "property-carbohydrates",
+                        "property_value": 22.84
+                    }
+                ],
+                "source": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/173944/nutrients"
+            },
+            "fdc_id": "173944",
+            "alias": [],
+            "comment": "FDA import 2023-05-01 10:59:12.114650"
         }
     }
 }
