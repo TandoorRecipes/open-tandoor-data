@@ -16,13 +16,16 @@ def recursive_translate_object(l, d, o, schema, lt):
                     else:
                         obj_mt = True
             elif isinstance(schema[x], list):
+                new_list = []
                 for i in o[x]:
                     if isinstance(i, str):
                         pass  # TODO add translation for strings in lists
                     else:
                         # lists can only contain objects of the same type. validate all list entries against the first type in schema.
-                        o[x], mt = recursive_translate_object(l, d, i, schema[x][0], lt)
+                        obj, mt = recursive_translate_object(l, d, i, schema[x][0], lt)
+                        new_list.append(obj)
                         obj_mt = obj_mt or mt
+                o[x] = new_list
             else:
                 # validate nested object
                 o[x], mt = recursive_translate_object(l, d, o[x], schema[x], lt)
