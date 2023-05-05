@@ -62,8 +62,8 @@ def validate_schema(l, o, d, schema, base_object):
         try:
             if isinstance(schema[x], str):
                 if (
-                    schema[x].split(":")[0] == "localized_string"
-                    or schema[x].split(":")[0] == "string"
+                        schema[x].split(":")[0] == "localized_string"
+                        or schema[x].split(":")[0] == "string"
                 ):
                     if not re.fullmatch(r"([A-z0-9\-\(\)\&\s])+", o[x]):
                         add_error(
@@ -150,21 +150,34 @@ for l in ["base"] + get_available_versions():
     for d in get_available_datatypes():
         data[l][d] = {
             "keys": [],
+            "names": [],
+            "fdc_ids": [],
             "data": {},
         }
         try:
             version_data = always_merger.merge(load_data(d, l), data["base"][d]["data"])
-            for k in list(version_data.keys()):
+            for k in list(version_data.keys()):  # TODO prevent errors from showing for each language
                 if k in data[l][d]["keys"]:
                     add_error(l, d, k, "Duplicate key, object ignored")
                 else:
                     data[l][d]["keys"].append(k)
                     data[l][d]["data"][k] = version_data[k]
+                if d in ['food']:
+                    fdc_id = data[l][d]["data"][k]['fdc_id']
+                    if fdc_id in data[l][d]["fdc_ids"]:
+                        add_error(l, d, k, f"Duplicate FDC ID {fdc_id}")
+                    else:
+                        data[l][d]["fdc_ids"].append(fdc_id)
+                if d in ['food', 'unit', 'property', 'category', 'supermarket']:
+                    name = data[l][d]["data"][k]['name']
+                    if name in data[l][d]["names"]:
+                        add_error(l, d, k, f"Duplicate name {name}")
+                    else:
+                        data[l][d]["names"].append(name)
         except JSONDecodeError as e:
             add_error(
                 l, d, None, f"JSON format error: {e.msg} on line {e.lineno}:{e.colno}"
             )
-
 
 for l in ["base"] + get_available_versions():
     for d in get_available_datatypes():
@@ -179,7 +192,6 @@ for l in ["base"] + get_available_versions():
                 validate_slug_characters(l, d, k)
         except JSONDecodeError as e:
             pass
-
 
 print("========================================")
 if len(errors) > 0:

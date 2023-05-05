@@ -30,6 +30,13 @@ def load_data(datatype, language="base"):
         return {}
 
 
+def save_data(datatype, data, language="base"):
+    log("debug", f"saving datatype {datatype}")
+    data_to_store = {'data': data}
+    f = open(os.path.join(BASE_DIR_DATA, datatype, language, "data.json"), "w", encoding="UTF-8", )
+    f.write(json.dumps(data_to_store))
+
+
 def load_schema():
     log("debug", f"loading schema")
 
