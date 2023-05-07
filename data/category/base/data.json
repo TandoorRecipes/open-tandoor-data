@@ -1,25 +1,52 @@
 {
-    "data": {
-        "category-dairy": {
-            "name": "Dairy"
-        },
-        "category-baking" : {
-            "name": "Baking"
-        },
-        "category-produce" : {
-            "name": "Produce"
-        },
-        "category-bakery" : {
-            "name": "Bakery"
-        },
-        "category-deli" : {
-            "name": "Deli"
-        },
-        "category-frozen" : {
-            "name": "Frozen"
-        },
-        "category-canned" : {
-            "name": "Canned"
-        }
+  "data": {
+    "category-dairy": {
+      "name": "Dairy"
+    },
+    "category-baking": {
+      "name": "Baking"
+    },
+    "category-produce": {
+      "name": "Produce"
+    },
+    "category-bakery": {
+      "name": "Bakery"
+    },
+    "category-deli": {
+      "name": "Deli"
+    },
+    "category-frozen": {
+      "name": "Frozen"
+    },
+    "category-canned": {
+      "name": "Canned"
+    },
+    "category-fish": {
+      "name": "Fish"
+    },
+    "category-meat": {
+      "name": "Meat"
+    },
+    "category-herbs-spices": {
+      "name": "Herbs and Spices"
+    },
+    "category-bread-cereal": {
+      "name": "Bread and Cereals"
+    },
+    "category-oil-vinegar": {
+      "name": "Oil and Vinegar"
+    },
+    "category-condiments-sauces": {
+      "name": "Condiments and Sauces"
+    },
+    "category-cheese": {
+      "name": "Cheese"
+    },
+    "category-dry": {
+      "name": "Dry Goods"
+    },
+    "category-asian": {
+      "name": "Asian"
     }
+  }
 }
