@@ -73,7 +73,7 @@
             "name": "Ketchup",
             "plural_name": "Ketchup",
             "supermarket_category": "category-baking",
-            "preferred_unit_metric": "unit-g",
+            "preferred_unit_metric": "unit-ml",
             "preferred_packaging_unit_metric": "unit-g",
             "preferred_unit_imperial": "unit-tbsp",
             "preferred_packaging_unit_imperial": "unit-fl-oz",
