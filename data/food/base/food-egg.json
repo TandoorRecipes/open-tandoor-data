@@ -1,0 +1,35 @@
+{
+  "name": "Egg",
+  "plural_name": "Eggs",
+  "supermarket_category": "category-baking",
+  "preferred_unit_metric": "unit-pcs",
+  "preferred_packaging_unit_metric": "unit-pcs",
+  "preferred_unit_imperial": "unit-pcs",
+  "preferred_packaging_unit_imperial": "unit-pcs",
+  "properties": {
+    "food_amount": 100,
+    "food_unit": "unit-g",
+    "type_values": [
+      {
+        "property_type": "property-calories",
+        "property_value": 55
+      },
+      {
+        "property_type": "property-carbohydrates",
+        "property_value": 2.36
+      },
+      {
+        "property_type": "property-proteins",
+        "property_value": 10.7
+      },
+      {
+        "property_type": "property-fats",
+        "property_value": 0
+      }
+    ],
+    "source": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/747997/nutrients"
+  },
+  "fdc_id": "747997",
+  "alias": [],
+  "comment": ""
+}
