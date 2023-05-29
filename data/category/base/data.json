@@ -1,52 +1,68 @@
 {
   "data": {
     "category-dairy": {
-      "name": "Dairy"
-    },
-    "category-baking": {
-      "name": "Baking"
-    },
-    "category-produce": {
-      "name": "Produce"
-    },
-    "category-bakery": {
-      "name": "Bakery"
-    },
-    "category-deli": {
-      "name": "Deli"
-    },
-    "category-frozen": {
-      "name": "Frozen"
-    },
-    "category-canned": {
-      "name": "Canned"
-    },
-    "category-fish": {
-      "name": "Fish"
-    },
-    "category-meat": {
-      "name": "Meat"
-    },
-    "category-herbs-spices": {
-      "name": "Herbs and Spices"
-    },
-    "category-bread-cereal": {
-      "name": "Bread and Cereals"
-    },
-    "category-oil-vinegar": {
-      "name": "Oil and Vinegar"
-    },
-    "category-condiments-sauces": {
-      "name": "Condiments and Sauces"
+      "name": "Dairy",
+      "description": "All milk products like milk, yoghurt, butter. But not cheese."
     },
     "category-cheese": {
-      "name": "Cheese"
+      "name": "Cheese",
+      "description": "Different kinds of cheeses such as parmigiano, mozzarella, or cheddar. Also includes grated cheeses."
     },
-    "category-dry": {
-      "name": "Dry Goods"
+    "category-baking": {
+      "name": "Baking",
+      "description": "Products used in baking like flour, sugar, baking powder."
     },
-    "category-asian": {
-      "name": "Asian"
+    "category-produce": {
+      "name": "Produce",
+      "description": "Vegetables and fruits. Could be split into those categories."
+    },
+    "category-bakery": {
+      "name": "Bakery",
+      "description": "Baked goods such as bread, toast, muffins."
+    },
+    "category-noodles": {
+      "name": "Noodles",
+      "description": "All types of noodles. "
+    },
+    "category-deli": {
+      "name": "Deli",
+      "description": "Cold cuts (of meat products such as sausage)."
+    },
+    "category-frozen": {
+      "name": "Frozen",
+      "description": "All frozen food including pre-made and ice cream."
+    },
+    "category-canned": {
+      "name": "Canned",
+      "description": "All canned foods including vegetables, fruits and pre-made foods."
+    },
+    "category-fish": {
+      "name": "Fish",
+      "description": "Fresh fish and other seafood."
+    },
+    "category-meat": {
+      "name": "Meat",
+      "description": "Fresh meat such as ground beef, steak, chicken."
+    },
+    "category-herbs-spices": {
+      "name": "Herbs and Spices",
+      "description": "Dried herbs and spices. Could include salt."
+    },
+    "category-cereal": {
+      "name": "Cereal",
+      "description": "All types of cereal including müsli and oatmeal."
+    },
+    "category-oil-vinegar": {
+      "name": "Oil and Vinegar",
+      "description": "Includes all the different types of oils and vinegars."
+    },
+    "category-condiments-sauces": {
+      "name": "Condiments and Sauces",
+      "description": "All condiments such as ketchup, mayo, mustard. Also includes sauces such as pesto rosso."
+    },
+    "category-alcohol": {
+      "name": "Alcohol",
+      "description": "For beer, wine and liquors used in cooking or baking."
     }
   }
 }
