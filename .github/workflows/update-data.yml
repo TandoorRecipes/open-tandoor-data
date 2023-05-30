@@ -1,0 +1,38 @@
+
+name: Update Data
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.11"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Validate data
+      run: |
+        python validate.py
+    - name: Update Data
+      run: |
+        python update_data.py
+    - name: Update Translations
+      run: |
+        python build_translations.py
+    - name: Update Data
+      run: |
+        python build.py
+    - uses: stefanzweifel/git-auto-commit-action@v4
