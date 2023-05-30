@@ -81,6 +81,10 @@ def get_available_versions():
             if f.is_dir():
                 if not f.name in versions and not f.name == "base":
                     versions.append(f.name)
+
+    for f in os.scandir(BASE_DIR_LOCALE):
+        if not f.name in versions and not f.name == "base":
+            versions.append(f.name.replace('.json',''))
     return versions
 
 
