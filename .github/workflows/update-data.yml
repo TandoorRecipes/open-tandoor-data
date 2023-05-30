@@ -28,6 +28,8 @@ jobs:
       run: |
         python validate.py
     - name: Update Data
+      env:
+        TANDOOR_API_KEY: ${{ secrets.TANDOOR_API_KEY }}
       run: |
         python update_data.py
     - name: Update Translations
