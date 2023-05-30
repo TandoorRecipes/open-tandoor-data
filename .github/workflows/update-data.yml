@@ -4,6 +4,7 @@ name: Update Data
 on:
   schedule:
     - cron: "0 */12 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: read
