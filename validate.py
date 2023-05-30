@@ -168,7 +168,7 @@ for l in ["base"] + get_available_versions():
                         add_error(l, d, k, f"Duplicate FDC ID {fdc_id}")
                     else:
                         data[l][d]["fdc_ids"].append(fdc_id)
-                if d in ['food', 'unit', 'property', 'category', 'supermarket']:
+                if d in ['food', 'unit', 'property', 'category', 'store']:
                     name = data[l][d]["data"][k]['name']
                     if name in data[l][d]["names"]:
                         add_error(l, d, k, f"Duplicate name {name}")

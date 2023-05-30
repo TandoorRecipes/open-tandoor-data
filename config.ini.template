@@ -1,4 +1,0 @@
-[DEFAULT]
-# get your key here https://fdc.nal.usda.gov/api-key-signup.html
-# DEMO_KEY can be used but has very low rate limits https://api.data.gov/docs/rate-limits/
-fda_api_key=DEMO_KEY
