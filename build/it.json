@@ -1,1 +1,1 @@
-{"metadata": {}, "food": {}, "unit": {}, "category": {}, "property": {}, "store": {"store-walmart": {"name": "Walmart", "categories": [], "comment": ""}}, "conversion": {}}
+{"metadata": {}, "food": {}, "unit": {}, "category": {}, "property": {}, "store": {"store-walmart": {"name": "Walmart", "categories": [], "comment": ""}, "store-costco": {"name": "costco", "categories": [], "comment": ""}, "store-kroger": {"name": "kroger", "categories": [], "comment": ""}}, "conversion": {}}

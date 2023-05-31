@@ -1,1 +1,1 @@
-{"data": {"store-walmart": {"name": "Walmart", "categories": ["category-produce"], "comment": ""}}}
+{"data": {"store-walmart": {"name": "Walmart", "categories": ["category-produce"], "comment": ""}, "store-costco": {"name": "costco", "categories": ["category-produce"], "comment": ""}, "store-kroger": {"name": "kroger", "categories": [], "comment": ""}}}
