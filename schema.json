@@ -3,10 +3,6 @@
         "name": "localized_string:128",
         "plural_name": "localized_string:128",
         "store_category": "reference:category",
-        "preferred_unit_metric": "reference:unit",
-        "preferred_packaging_unit_metric": "reference:unit",
-        "preferred_unit_imperial": "reference:unit",
-        "preferred_packaging_unit_imperial": "reference:unit",
         "properties": {
             "food_amount": "number",
             "food_unit": "reference:unit",
