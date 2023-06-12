@@ -11,7 +11,7 @@ def recursive_translate_object(l, d, o, schema, lt):
         try:
             if isinstance(schema[x], str):
                 if schema[x].split(":")[0] == "localized_string":
-                    if o[x] in lt:
+                    if o[x] in lt and lt[o[x]].strip() != '':
                         o[x] = lt[o[x]]
                     else:
                         obj_mt = True
@@ -44,7 +44,7 @@ language_data = {
     }
 }
 
-for l in get_available_versions():
+for l in get_available_versions() + ['base']:
     language_data[l] = {
         'metadata': {}
     }
@@ -57,12 +57,18 @@ for l in get_available_versions():
         for k in list(base_data.keys()):
             translated_object, missing_translation = recursive_translate_object(l, d, base_data[k], global_schema[d], language_translations)
             if not missing_translation:
-                localized_base_data[k] = translated_object
+                if d == 'conversion':
+                    if translated_object['food'] in language_data[l]['food'] and translated_object['base_unit'] in language_data[l]['unit'] and translated_object['converted_unit'] in language_data[l]['unit']:
+                        localized_base_data[k] = translated_object
+                else:
+                    localized_base_data[k] = translated_object
 
         language_data[l][d] = always_merger.merge(load_data(d, l), localized_base_data)
 
         language_data['metadata'][l][d] = len(list(language_data[l][d].keys()))
 
-    save_build_version(l, language_data[l])
+    if l != 'base':
+        save_build_version(l, language_data[l])
 
+save_build_version('en', language_data['base'])
 save_build_version('meta', language_data['metadata'])

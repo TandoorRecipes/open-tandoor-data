@@ -2,11 +2,7 @@
     "food": {
         "name": "localized_string:128",
         "plural_name": "localized_string:128",
-        "supermarket_category": "reference:category",
-        "preferred_unit_metric": "reference:unit",
-        "preferred_packaging_unit_metric": "reference:unit",
-        "preferred_unit_imperial": "reference:unit",
-        "preferred_packaging_unit_imperial": "reference:unit",
+        "store_category": "reference:category",
         "properties": {
             "food_amount": "number",
             "food_unit": "reference:unit",
@@ -18,16 +14,13 @@
             ],
             "source": "required"
         },
-        "fdc_id": "string:128",
-        "alias": [
-            "regex:128"
-        ]
+        "fdc_id": "string:128"
     },
     "unit": {
         "name": "localized_string:128",
         "plural_name": "localized_string:128",
-        "base_unit": "options::g:kg:ml:l:ounce:pound:fluid_ounce:tsp:tbsp:cup:pint:quart:gallon:imperial_fluid_ounce:imperial_pint:imperial_quart:imperial_gallon",
-        "type": "options:weight:volume:other"
+        "base_unit": "options::G:KG:ML:L:OUNCE:POUND:FLUID_OUNCE:TSP:TBSP:CUP:PINT:QUART:GALLON:IMPERIAL_FLUID_OUNCE:IMPERIAL_PINT:IMPERIAL_QUART:IMPERIAL_GALLON",
+        "type": "options:WEIGHT:VOLUME:OTHER"
     },
     "category": {
         "name": "localized_string:128"
@@ -36,7 +29,7 @@
         "name": "localized_string:128",
         "unit": "string:16"
     },
-    "supermarket": {
+    "store": {
         "categories": [
             "reference:category"
         ]
