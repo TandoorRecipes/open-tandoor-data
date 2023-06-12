@@ -136,7 +136,7 @@ def validate_schema(l, o, d, schema, base_object):
 
 
 def validate_slug_characters(language, datatype, slug):
-    if not re.fullmatch(r"(([a-z1-9])+(\-)*)+", slug):
+    if not re.fullmatch(r"(([a-z0-9])+(\-)*)+", slug):
         add_error(
             language,
             datatype,
