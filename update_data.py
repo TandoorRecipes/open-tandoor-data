@@ -34,6 +34,7 @@ def get_unit_object(e):
 def get_property_object(e):
     return {
         'name': e['name'],
+        'unit': e['unit'],
         'comment': e['comment'],
     }
 
