@@ -99,8 +99,10 @@ def update_data():
     for endpoint in ENDPOINTS:
         object_type = endpoint.replace('open-data-', '')
         response = requests.get(f'https://app.tandoor.dev/api/{endpoint}/', headers=REQUEST_HEADERS)
+        print(response)
         type_data = {}
         json_response = json.loads(response.content)
+        print(json_response)
         for e in json_response:
             version = e['version']['code']
             if version not in type_data:
