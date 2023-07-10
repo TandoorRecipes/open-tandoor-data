@@ -139,7 +139,7 @@
     "Milk Nonfat": "Entrahmte Milch",
     "Milk Lowfat": "Fettarme Milch",
     "Asparagus white": "Weißer Spargel",
-    "Baking Soda": "Backpulver",
+    "Baking Soda": "Natron",
     "Tomato (canned)": "Dosentomate",
     "Milk Whole": "Vollmilch",
     "Date dried": "Dattel, getrocknet",
@@ -150,7 +150,7 @@
     "Chilies red": "Chilies (rot)",
     "Tomato canned": "Dosentomate",
     "Tomatoes canned": "Dosentomaten",
-    "Fish sauce": "Fisch Sauce",
+    "Fish sauce": "Fischsoße",
     "Apricot": "Aprikose",
     "Apricots": "Aprikosen",
     "Blueberries": "Blaubeeren",
@@ -159,7 +159,7 @@
     "White Beans": "Weiße Bohnen",
     "White beans": "Weiße Bohnen",
     "Juices": "Säfte",
-    "Soy sauce": "Soja Sauce",
+    "Soy sauce": "Sojasoße",
     "Pak choi": "Pak Choi",
     "Rice white long grain": "Langkornreis",
     "Low-fat Buttermilk": "Buttermilch (fettarm)",
@@ -181,5 +181,6 @@
     "Green Cabbage": "Grünkohl",
     "Green Cabbages": "Grünkohl",
     "Mushroom shiitake dried": "Shiitake, getrocknet",
-    "Mushrooms shiitake dried": "Schiitake, getrocknet"
+    "Mushrooms shiitake dried": "Schiitake, getrocknet",
+    "Lettuce green": "grüner Salat"
 }
