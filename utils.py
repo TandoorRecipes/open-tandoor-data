@@ -2,6 +2,7 @@ import os
 import traceback
 import json
 from glob import glob
+from pathlib import Path
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR_DATA = os.path.join(BASE_DIR, "data")
@@ -33,8 +34,11 @@ def load_data(datatype, language="base"):
 def save_data(datatype, data, language="base"):
     log("debug", f"saving datatype {datatype}")
     data_to_store = {'data': data}
-    f = open(os.path.join(BASE_DIR_DATA, datatype, language, "data.json"), "w", encoding="UTF-8", )
-    f.write(json.dumps(data_to_store))
+
+    Path(os.path.join(BASE_DIR_DATA, datatype, language)).mkdir(parents=True, exist_ok=True)
+
+    with open(os.path.join(BASE_DIR_DATA, datatype, language, "data.json"), "w", encoding="UTF-8", ) as f:
+        f.write(json.dumps(data_to_store))
 
 
 def load_schema():
