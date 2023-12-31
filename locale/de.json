@@ -201,7 +201,7 @@
     "Butter Clarified": "Butterschmalz",
     "Wheat gluten": "Weizengluten",
     "Gochujang Sauce": "Gochujang Sauce",
-    "Unbleached All-Purpose Flour": "Mehl 550",
+    "Unbleached All-Purpose Flour": "Weizenmehl 405",
     "creme fraiche": "Crème fraîche",
     "Red or White Currants": "Rote oder weiße Johannisbeeren",
     "Dried Seaweed": "Getrocknete Algen",
@@ -444,5 +444,7 @@
     "Colby Jack": "Colby Jack (Käse)",
     "Fontina": "Fontina",
     "Gouda": "Gouda",
-    "Flour Corn": "Mehlmais"
+    "Flour Corn": "Mehlmais",
+    "Roma Tomatoes": "Romatomaten",
+    "Roma Tomato": "Romatomate"
 }
