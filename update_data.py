@@ -35,6 +35,7 @@ def get_property_object(e):
     return {
         'name': e['name'],
         'unit': e['unit'],
+        'fdc_id': e['fdc_id'],
         'comment': e['comment'],
     }
 
