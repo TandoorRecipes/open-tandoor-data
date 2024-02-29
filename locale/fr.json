@@ -6,8 +6,8 @@
     "g": "g",
     "kg": "kg",
     "ml": "ml",
-    "oz": "oz",
-    "lb": "lb",
+    "oz": "once",
+    "lb": "livre",
     "lbs": "livres",
     "tsp": "c. à c",
     "tbsp": "c. à s",
@@ -444,5 +444,8 @@
     "Gouda": "Gouda",
     "Flour Corn": "Farine de Maïs",
     "Figs": "Figues",
-    "Grapefruit Juice": "Jus de Pamplemousse"
+    "Grapefruit Juice": "Jus de Pamplemousse",
+    "Roma Tomatoes": "Tomates Roma",
+    "Roma Tomato": "Tomate Roma",
+    "Whole wheat flour": "Farine de blé complet"
 }
