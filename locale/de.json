@@ -451,7 +451,7 @@
     "Morton Table Salt": "Morton Tafelsalz",
     "Maldon Sea Salt Flake": "Maldon Meersalzflocken",
     "Maldon Sea Salt Flakes": "Maldon Meersalzflocken",
-    "Ancient Kosher Sea Salt": "Ancient Koscheres Seesalz",
+    "Ancient Kosher Sea Salt": "Altes koscheres Meersalz",
     "La Baleine Fine Sea Salt": "La Baleine Feines Meersalz",
     "Ancient Fine Sea Salt": "Ancient Feines Seesalz",
     "La Baleine Coarse Sea Salt": "La Baleine Grobes Meersalz",
@@ -502,5 +502,14 @@
     "Tomato dried": "getrocknete Tomate",
     "Tomatoes dried": "getrocknete Tomaten",
     "Hoisin sauce": "Hoisin-Sauce",
-    "Ham": "Schinken"
+    "Ham": "Schinken",
+    "Japchae noodles": "Glasnudeln",
+    "Canned Fire Roasted Crushed Tomato": "Flammengeröstete Dosentomaten",
+    "Canned Fire Roasted Crushed Tomatoes": "Flammengeröstete Dosentomaten",
+    "Part-Skim Mozzarella Cheese": "Fettreduzierter Mozzarella",
+    "Apple Gala": "Apfel (Gala)",
+    "Apple Galas": "Äpfel (Gala)",
+    "Apple Honeycrisp": "Apfel (Honeycrisp)",
+    "Apples Honeycrisp": "Äpfel (Honeycrisp)",
+    "Monterey Jack": "Monterey Jack"
 }
