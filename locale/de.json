@@ -376,8 +376,8 @@
     "Rutabagas": "Steckrüben",
     "Rye Flour": "Roggenmehl",
     "Baking Powder": "Backpulver",
-    "Egg (Medium)": "mittleres Ei",
-    "Eggs (Medium)": "mittlere Eier",
+    "Egg (Medium)": "Ei (M)",
+    "Eggs (Medium)": "Eier (M)",
     "Ground Sage": "Salbei",
     "Salmon Fillet": "Lachsfilet",
     "Salmon Fillets": "Lachsfilets",
@@ -526,5 +526,13 @@
     "Flour buckwheat": "Buchweizenmehl",
     "Garlic Paste": "Knoblauch Paste",
     "Urad Dal": "Urad Dal",
-    "Cayenne Pepper": "Cayenne Pfeffer"
+    "Cayenne Pepper": "Cayenne Pfeffer",
+    "Artichoke Raw": "Artischocke (roh)",
+    "Red Bell Pepper": "rote Paprika",
+    "Yellow Bell Pepper": "gelbe Paprika",
+    "Yellow Bell Peppers": "gelbe Paprikas",
+    "Silken Tofu": "Seidentofu",
+    "Soy Milk": "Sojadrink",
+    "Unsweetened Soy Milk": "Ungesüßter Sojadrink",
+    "Lettuce red": "Rotblättriger Salat"
 }
