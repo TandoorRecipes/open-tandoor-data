@@ -19,7 +19,7 @@
     "unit": {
         "name": "localized_string:128",
         "plural_name": "localized_string:128",
-        "base_unit": "options::G:KG:ML:L:OUNCE:POUND:FLUID_OUNCE:TSP:TBSP:CUP:PINT:QUART:GALLON:IMPERIAL_FLUID_OUNCE:IMPERIAL_PINT:IMPERIAL_QUART:IMPERIAL_GALLON",
+        "base_unit": "options::g:kg:ounce:pound:ml:l:fluid_ounce:pint:quart:gallon:tbsp:tsp:us_cup:imperial_fluid_ounce:imperial_pint:imperial_quart:imperial_gallon:imperial_tbsp:imperial_tsp",
         "type": "options:WEIGHT:VOLUME:OTHER"
     },
     "category": {
