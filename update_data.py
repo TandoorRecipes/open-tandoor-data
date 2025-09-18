@@ -103,7 +103,7 @@ def update_data():
         response = requests.get(f'https://app.tandoor.dev/api/{endpoint}/', headers=REQUEST_HEADERS)
         type_data = {}
         json_response = json.loads(response.content)
-        for e in json_response:
+        for e in json_response['results']:
             version = e['version']['code']
             if version not in type_data:
                 type_data[version] = {'data': {}}
