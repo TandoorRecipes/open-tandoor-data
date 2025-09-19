@@ -14,7 +14,7 @@
             ],
             "source": "required"
         },
-        "fdc_id": "string:128"
+        "fdc_id": "number"
     },
     "unit": {
         "name": "localized_string:128",

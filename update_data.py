@@ -100,29 +100,36 @@ def get_store_object(e):
 def update_data():
     for endpoint in ENDPOINTS:
         object_type = endpoint.replace('open-data-', '')
-        response = requests.get(f'https://app.tandoor.dev/api/{endpoint}/', headers=REQUEST_HEADERS)
+        page = 1
         type_data = {}
-        json_response = json.loads(response.content)
-        for e in json_response['results']:
-            version = e['version']['code']
-            if version not in type_data:
-                type_data[version] = {'data': {}}
+        while True:
+            response = requests.get(f'https://app.tandoor.dev/api/{endpoint}/?page={page}&page_size=100', headers=REQUEST_HEADERS)
+            json_response = json.loads(response.content)
+            for e in json_response['results']:
+                version = e['version']['code']
+                if version not in type_data:
+                    type_data[version] = {'data': {}}
 
-            parsed_object = None
-            if object_type == 'unit':
-                parsed_object = get_unit_object(e)
-            if object_type == 'property':
-                parsed_object = get_property_object(e)
-            if object_type == 'category':
-                parsed_object = get_category_object(e)
-            if object_type == 'store':
-                parsed_object = get_store_object(e)
-            if object_type == 'food':
-                parsed_object = get_food_object(e)
-            if object_type == 'conversion':
-                parsed_object = get_conversion_object(e)
+                parsed_object = None
+                if object_type == 'unit':
+                    parsed_object = get_unit_object(e)
+                if object_type == 'property':
+                    parsed_object = get_property_object(e)
+                if object_type == 'category':
+                    parsed_object = get_category_object(e)
+                if object_type == 'store':
+                    parsed_object = get_store_object(e)
+                if object_type == 'food':
+                    parsed_object = get_food_object(e)
+                if object_type == 'conversion':
+                    parsed_object = get_conversion_object(e)
 
-            type_data[version]['data'][e['slug']] = parsed_object
+                type_data[version]['data'][e['slug']] = parsed_object
+
+            if json_response['next'] is None:
+                break
+            page += 1
+
         for v in list(type_data.keys()):
             save_data(object_type, type_data[v]['data'], language=v)
 
