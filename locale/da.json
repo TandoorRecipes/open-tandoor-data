@@ -441,7 +441,7 @@
     "Brie": "Brie",
     "Flour Corn": "Majsmel",
     "Whole wheat flour": "Fuldkornsmel",
-    "Diamond Crystal Kosher Salt": "",
+    "Diamond Crystal Kosher Salt": "Diamond Crystal grov salt",
     "Cumin": "Spidskommen",
     "Vinegar white wine": "Hvidvinseddike",
     "Canned Crushed Tomatoes": "Flåede tomater",
@@ -468,5 +468,16 @@
     "Soy Milk": "Sojamælk",
     "Unsweetened Soy Milk": "Usødet sojamælk",
     "Coriander Seed": "Korianderfrø",
-    "Coriander Seeds": "Korianderfrø"
+    "Coriander Seeds": "Korianderfrø",
+    "Flour semolina (coarse and semi-coarse)": "Semulje (grov og semi-grov)",
+    "Colby": "Colby-ost",
+    "Colby Jack": "Colby Jack-ost",
+    "Fontina": "Fontina-ost",
+    "Gouda": "Gouda-ost",
+    "Roma Tomato": "Roma-tomat",
+    "Roma Tomatoes": "Roma-tomater",
+    "Morton Coarse Kosher Salt": "Morton grov salt",
+    "Morton Table Salt": "Morton bordsalt",
+    "Maldon Sea Salt Flake": "Maldon havsaltflage",
+    "Maldon Sea Salt Flakes": "Maldon havsaltflager"
 }
