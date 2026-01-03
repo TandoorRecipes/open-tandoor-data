@@ -66,7 +66,7 @@
     "l": "l",
     "Tomatoes (canned)": "Pomidory w puszce",
     "Feta": "Ser Feta",
-    "Onions (red)": "Cebula czerwona",
+    "Onions (red)": "Cebula (czerwona)",
     "Flour (spelt whole grain)": "Mąka (pełne ziarno orkiszowe)",
     "Garlic": "Czosnek",
     "Chicken Breast": "Pierś z kurczaka",
@@ -447,5 +447,12 @@
     "Fontina": "Ser Fontina",
     "Gouda": "Ser Gouda",
     "Flour Corn": "Mąka kukurydziana",
-    "Whole wheat flour": "Mąka pełnoziarnista"
+    "Whole wheat flour": "Mąka pełnoziarnista",
+    "pinches": "szczypty",
+    "pinch": "szczypta",
+    "Soy Milk": "mleko sojowe",
+    "Brown Sugar": "Cukier brązowy",
+    "Apple juice": "Sok jabłkowy",
+    "Tomato dried": "Suszony pomidor",
+    "Ham": "Szynka"
 }
