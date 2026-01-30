@@ -272,7 +272,7 @@
     "Yellow Plantains": "Plátanos Amarillos",
     "Haddock Fillet": "Filete de Abadejo",
     "Haddock Fillets": "Filetes de Abadejo",
-    "Half and Half": "",
+    "Half and Half": "Mitad y Mitad",
     "Honey": "Miel",
     "Jalapeno": "Jalapeño",
     "Jalapenos": "Jalapeños",
@@ -392,9 +392,9 @@
     "Condensed Milk": "Leche Condensada",
     "Evaporated Milk": "Leche Evaporada",
     "Tempeh": "Tempeh",
-    "Thyme": "Timo",
+    "Thyme": "Tomillo",
     "Ground Turmeric": "Cúrcuma",
-    "Dried Thyme": "Timo Deshidratado",
+    "Dried Thyme": "Tomillo seco",
     "Extra-Firm Tofu": "Tofu Extrafirme",
     "Tomato": "Tomate",
     "Tomatoes": "Tomates",
@@ -436,5 +436,11 @@
     "Anchovy Fillet": "Filete de Anchoas",
     "Anchovy Fillets": "Filetes de Anchoas",
     "Water": "Agua",
-    "Vinegar red wine": "Vinagre de vino rojo"
+    "Vinegar red wine": "Vinagre de vino rojo",
+    "Flour semolina (coarse and semi-coarse)": "Harina de sémola (gruesa y semigruesa)",
+    "Camembert": "Camembert",
+    "Brie": "Brie",
+    "Colby": "Queso Colby",
+    "Colby Jack": "Queso Colby Jack",
+    "Hoisin sauce": "Salsa Hoisin"
 }
