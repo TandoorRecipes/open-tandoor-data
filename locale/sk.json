@@ -1,7 +1,7 @@
 {
     "Potato": "Zemiak",
     "Potatoes": "Zemiaky",
-    "Wheat flour": "pšeničná múka",
+    "Wheat flour": "Pšeničná múka",
     "pcs": "ks",
     "g": "g",
     "kg": "kg",
@@ -511,7 +511,7 @@
     "Cotija": "Syr Cotija",
     "Monterey Jack": "Syr Monterey Jack",
     "Ham": "Šunka",
-    "Hoisin sauce": "omáčka hoisin",
+    "Hoisin sauce": "Hoisin omáčka",
     "Tomatoes dried": "Sušené paradajky",
     "Garlic Paste": "Cesnaková pasta",
     "Urad Dal": "Urad Dal",
@@ -528,7 +528,7 @@
     "Unsweetened Almond milk shelf stable": "Nesladené mandľové mlieko nechladené",
     "Lettuce red": "Šalát listový červený",
     "Artichoke Raw": "Artičok (surový)",
-    "Artichokes Raw": "Artičokz (surové)",
+    "Artichokes Raw": "Artičoky (surové)",
     "Hard Tofu": "Tvrdé tofu",
     "Silken Tofu": "Hodvábne tofu",
     "Soy Milk": "Sójové mlieko",
@@ -537,5 +537,10 @@
     "Red Bell Pepper": "Červená paprika",
     "Yellow Bell Pepper": "Žltá paprika",
     "Yellow Bell Peppers": "Žlté papriky",
-    "Dried Onion Flakes": "Sušené cibuľové vločky"
+    "Dried Onion Flakes": "Sušené cibuľové vločky",
+    "Allspice": "Nové korenie",
+    "Coriander Seed": "Koriandrové semienko",
+    "Coriander Seeds": "Koriandrové semienka",
+    "coriander (cilantro) leaf raw": "List koriandra (čerstvý)",
+    "coriander (cilantro) leaves raw": "List koriandra (čerstvý)"
 }
